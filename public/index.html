@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+</head>
+
+<body>
+    <div class="mainformdiv">
+        <div class="formouterdiv">
+            <h1>Quiz Form</h1>
+            <div class="forminnerdiv">
+                <input type="text" placeholder="Enter your Name" id="input1">
+                <input type="text" placeholder="Enter your course">
+                <button onclick="startQuiz()" type="submit" id="submit">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="totalbody" class="totalbody" style="display: none;">
+        <h1>Quiz App</h1>
+        <header class="quizheader">
+            <div class="Name">
+                <p id="Namep">Subhan</p>
+            </div>
+            <div class="timer">
+                <p> <span id="min">6</span> : <span id="sec">60</span> </p>
+            </div>
+        </header>
+        <section id="maindiv">
+            <div class="div1">
+                <p class="p1"> Question: <span class="span1"></span> </p>
+                <p class="p2" id="p2"></p>
+            </div>
+            <div class="div2">
+                <ul>
+                    <li id="li1" onclick="checkAns(this)"></li>
+                    <li id="li2" onclick="checkAns(this)"></li>
+                    <li id="li3" onclick="checkAns(this)"></li>
+                    <li id="li4" onclick="checkAns(this)"></li>
+                </ul>
+            </div>
+        </section>
+        <footer class="quizfooter">
+            <div>
+                <p class="footp1"><span id="doneques"></span> / <span id="totalques"></span></p>
+            </div>
+            <div>
+                <button onclick="nextQues()" id="button" disabled> Next </button>
+            </div>
+        </footer>
+    </div>
+    <div id="resultmaindiv" class="resultmaindiv" style="display: none;">
+        <section id="result" class="result" >
+            <h1>Result</h1>
+            <p>Total Question : <span id="resulttotalques"></span></p>
+            <p>Right Answer: <span id="rightans"></span></p>
+            <p>Wrong Answer: <span id="wrongans"></span></p>
+        </section>
+    </div>
+</body>
+<script src="app.js"></script>
+<script src="appfirebase.js"></script>
+
+</html>
