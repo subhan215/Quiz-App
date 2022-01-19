@@ -170,7 +170,7 @@ function startQuiz() {
     form.style.display = "none"
     interval = setInterval(timer, 10);  */
 }
-database.ref("todos").on("child_added", function (data) {
+database.ref("todos").on("child_added", (data) => {
     totalQues.innerHTML = obj.length;
     p2.innerHTML = data.val()[counter].question;
     li1.innerHTML = data.val()[counter].Option.a;
