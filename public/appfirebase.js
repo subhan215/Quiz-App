@@ -150,7 +150,7 @@ function timer() {
 var interval;
 function startQuiz() {
 
-    name.innerHTML = input1;
+    /* name.innerHTML = input1; */
     totalBody.removeAttribute("style");
     totalBody.style.display = "flex";
     let key = database.ref("/").push().key;
