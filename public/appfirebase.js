@@ -8,7 +8,7 @@ const firebaseConfig = {
     appId: "1:813922620455:web:58979c3b2bc44142276a02"
 };
 const app = firebase.initializeApp(firebaseConfig);
-var database = app.database();
+const database = app.database();
 var obj = [
     {
         num: 1,
@@ -102,32 +102,32 @@ var obj = [
     }
 ];
 
-var submit = document.getElementById("submit");
-var form = document.getElementsByClassName("mainformdiv")[0];
-var input1 = document.getElementById("input1").value;;
-var name = document.getElementById("Namep");
-var counter = 0;
-var rightCounter = 0;
-var wrongCounter = 0;
-var li1 = document.getElementById("li1");
-var li2 = document.getElementById("li2");
-var li3 = document.getElementById("li3");
-var li4 = document.getElementById("li4");
-var p2 = document.getElementById("p2");
-var btn = document.getElementById("button");
-var doneQues = document.getElementById("doneques");
-var totalQues = document.getElementById("totalques")
-var resultTotalQues = document.getElementById("resulttotalques");
-var rightAns = document.getElementById("rightans");
-var wrongAns = document.getElementById("wrongans");
-var totalBody = document.getElementById("totalbody");
-var resultdiv = document.getElementById("resultmaindiv");
+let submit = document.getElementById("submit");
+let form = document.getElementsByClassName("mainformdiv")[0];
+let input1 = document.getElementById("input1").value;;
+let name = document.getElementById("Namep");
+let counter = 0;
+let rightCounter = 0;
+let wrongCounter = 0;
+let li1 = document.getElementById("li1");
+let li2 = document.getElementById("li2");
+let li3 = document.getElementById("li3");
+let li4 = document.getElementById("li4");
+let p2 = document.getElementById("p2");
+let btn = document.getElementById("button");
+let doneQues = document.getElementById("doneques");
+let totalQues = document.getElementById("totalques")
+let resultTotalQues = document.getElementById("resulttotalques");
+let rightAns = document.getElementById("rightans");
+let wrongAns = document.getElementById("wrongans");
+let totalBody = document.getElementById("totalbody");
+let resultdiv = document.getElementById("resultmaindiv");
 
-var min = 6;
-var sec = 60;
-var msec = 0
-var uimin = document.getElementById("min");
-var uisec = document.getElementById("sec");
+let min = 6;
+let sec = 60;
+let msec = 0
+let uimin = document.getElementById("min");
+let uisec = document.getElementById("sec");
 function timer() {
     msec++;
     if (msec == 100) {
@@ -153,7 +153,7 @@ function startQuiz() {
     name.innerHTML = input1;
     totalBody.removeAttribute("style");
     totalBody.style.display = "flex";
-    var key = database.ref("/").push().key;
+    let key = database.ref("/").push().key;
     database.ref("todos").child(key).set(obj);
     form.setAttribute("id", key);
     form.style.display = "none";
